@@ -1,0 +1,11 @@
+*{margin:0; padding:0;}
+i,em,strong{font-style:normal;}
+a{ text-decoration:none; border:#000;}
+img{ vertical-align:top; border:none;}
+.cfix:after{content:''; clear:both; display:block;}
+.fl{float:left}
+.fr{float:right}
+.w{width:15rem;margin:0 auto;}
+.f25_9{font-size:0.625rem; color:#999;}
+.f25_0{font-size:0.625rem; color:#000;}
+.f25_r{font-size:0.625rem; color:#d51942;}

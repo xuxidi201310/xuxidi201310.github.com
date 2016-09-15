@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin:0;padding:0;list-style: none;}
+	a{text-decoration: none;}
+	.fan{width:104px; height:98px; background:url(img2/fanhui.png);position:absolute;top:80px; left:20px; display:block;}
+	body{background:#000;background-size:100%;}
+	#big-box{width:1200px;height:300px;margin:200px auto;_background: red;position: absolute;top:50%;left:50%;margin-top: -200px;margin-left: -600px;}
+	#big-box .a1{position: absolute;top:150px;left:20px;width:100px;height: 100px;font-size: 30px;color:#fff;}
+	.a1 img{width:50px;height: 50px;display: block;}
+	.a2 img{width:50px;height: 50px;display: block;}
+	#big-box .a2{position: absolute;top:150px;right:20px;font-size: 30px;color:#fff;}
+	.box{height:300px;width:400px;position: relative;margin:0 auto;}
+	.box li{height:100%;width:100%;background:#bf189a;opacity: 0;border:1px solid #000;position:absolute;top:0;left:0;font-size:40px;line-height:300px;text-align:center;-webkit-transform:perspective(800px) translate(0,0) rotateY(0deg);-webkit-transition:1s all ease;}
+	.box li img{width:400px;height:300px;display: block;border-radius:10px;}
+	.box .l2{opacity:0;-webkit-transform:perspective(800px) translate(-250px,0) rotateY(45deg);z-index: 1;}
+	.box .l1{opacity:0.8;-webkit-transform:perspective(800px) translate(-220px,0) rotateY(45deg);z-index: 3;}
+	.box .r1{opacity:0.8;-webkit-transform:perspective(800px) translate(220px,0) rotateY(-45deg);z-index: 3;}
+	.box .r2{opacity:0;-webkit-transform:perspective(800px) translate(250px,0) rotateY(-45deg);z-index: 1;}
+	.box .cur{opacity:1;z-index: 5;}
+</style>
+<script>
+	window.onload=function(){
+		var oA1=document.querySelector('.a1');
+		var oA2=document.querySelector('.a2');
+		var oBox=document.querySelector('.box');
+		var aLi=oBox.children;
+		var aClass=[];
+		var bOk=false;
+		for(var i=0;i<aLi.length;i++){
+			aClass.push(aLi[i].className);
+		}
+		function tab(){
+			for(var i=0;i<aClass.length;i++){
+				aLi[i].className=aClass[i];
+			}
+			var oCur=document.querySelector('.cur');
+			function traned(){
+				oCur.removeEventListener('transitionend',traned,false);
+				bOk=false;
+			}
+			oCur.addEventListener('transitionend',traned,false);
+		}
+		oA1.onclick=function(){
+			if(bOk){return;}
+			bOk=true;
+			aClass.unshift(aClass.pop());
+			tab();
+		};
+		oA2.onclick=function(){
+			if(bOk){return;}
+			bOk=true;
+			
+			aClass.push(aClass.shift());
+			tab();
+		};
+	};
+</script>
+</head>
+<body>
+<a href="index.html"  class="fan"></a>
+<div id="big-box">
+	<a href="javascript:;" class="a1"><img src="img/img2/jiantou3.png" alt=""></a>
+	<a href="javascript:;" class="a2"><img src="img/img2/jiantou1.png" alt=""></a>
+	<ul class="box">
+		<li class="l2"><img src="img/img2/1.jpg" alt=""></li>
+		<li class="l1"><img src="img/img2/2.jpg" alt=""></li>
+		<li class="cur"><img src="img/img2/3.jpg" alt=""></li>
+		<li class="r1"><img src="img/img2/background1.jpg" alt=""></li>
+		<li class="r2"><img src="img/img2/xunyi.jpg" alt=""></li>
+		<li><img src="img/img2/back.jpg" alt=""></li>
+	</ul>
+</div>
+</body>
+</html>

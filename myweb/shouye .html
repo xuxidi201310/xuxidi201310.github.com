@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{margin:0; padding:0; list-style:none;}
+	.tab{margin:0 auto;width:700px; height:400px;position:relative;}
+	.tab ul{width:700px;overflow:hidden; height:400px; position:relative;}
+	.tab li{width:700px; height:400px; position:absolute;top:0;left:0;float:left;display:none;}
+	.tab .btn{ position:absolute;bottom:10px; left:50%; margin-left:-40px;width:80px; }
+	.tab .btn span{width:10px; height:10px; background:#333; float:left; margin:0 5px;}
+	.tab .btn .cur{ background:#C03;}
+</style>
+<script>
+	window.onload=function(){
+		var oTab=document.getElementById('tab');
+		var oUl=oTab.getElementsByTagName('ul')[0];
+		var aLi=oUl.children;
+		var oBtn=document.getElementById('btn');
+		var aSpan=oBtn.children;
+		var iNow=0;
+		for(var i=0; i<aSpan.length;i++){
+			aSpan[i].index=i;
+			aSpan[i].onmouseover=function(){
+				iNow=this.index;
+				tab();
+					
+			};	
+		}
+		function tab(){
+			for(var i=0;i<aSpan.length;i++){
+					aSpan[i].className='';
+					aLi[i].style.display='none';	
+			}
+				aSpan[iNow].className='cur';
+				aLi[iNow].style.display='block';	
+		}
+		
+	};
+</script>
+</head>
+
+<body>
+<div class="tab" id="tab">
+	<ul>
+    	<li style="display:block"><img src="img2/1.jpg"/></li>
+        <li><img src="img2/2.jpg"/></li>
+        <li><img src="img2/3.jpg"/></li>
+       	
+    </ul>
+    <div class="btn" id="btn">
+        <span class="cur"></span>
+        <span></span>
+        <span></span>
+        
+    </div>
+     
+    
+</div>
+</body>
+</html>

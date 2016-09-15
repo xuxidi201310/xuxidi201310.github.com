@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3d盒子</title>
+<style>
+   		 *{margin:0;padding:0;}
+		 body{ background:url(img/img2/back1.jpg) no-repeat; background-size:100%;}
+		.box{ width:300px; height:300px; margin:100px auto; -webkit-transition:10s all ease; -webkit-transform:perspective(800px) rotateY(0deg) rotateX(0deg); position:relative;-webkit-transform-style:preserve-3d; }
+		.box div{width:100%;height:100%; position:absolute; top:0;left:0; line-height:300px; text-align:center; font-size:30px; }
+		.front{ background:rgba(255,180,0,.8); -webkit-transform:translateZ(150PX); box-shadow: inset 0 0 100px green;}
+		.back{ background:rgba(200,255,0,.8); -webkit-transform:translateZ(-150PX); box-shadow: inset 0 0 100px red;}
+		.left{ background:rgba(255,0,100,.8); -webkit-transform:translate(-150px,0) rotateY(-90deg); box-shadow: inset 0 0 100px #fff;}
+		.right{ background:rgba(0,255,255,.8); -webkit-transform:translate(150px,0 ) rotateY(90deg);box-shadow: inset 0 0 100px aqua; }
+		.top{ background:rgba(100,255,255,.8); -webkit-transform:translate(0,-150px) rotateX(-90deg);box-shadow: inset 0 0 100px purple }
+		.bottom{ background:rgba(100,255,120,.8); -webkit-transform:translate(0,150px) rotateX(90deg); box-shadow: inset 0 0 100px green}
+		.box:active{-webkit-transform:perspective(800px)  rotateY(360deg) rotateX(360deg);}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+        <div class="front">前</div>
+        <div class="back">后</div>
+        <div class="left">左</div>
+        <div class="right">右</div>
+        <div class="top">上</div>
+        <div class="bottom">下</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,831 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="x-ua-compatible" content="ie=7"/>
+<title>易都</title>
+<link href="css/global.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all" />
+<link href="css/channels.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.soChange.js"></script>
+<script type="text/javascript" src="js/ScrollPic.js"></script>
+</head>
+<body class="ydb-bodybg">
+<!--头部-->
+<div class="ydb-topad"><img src="ad/adb_01.jpg"></div>
+<div class="ydb-head yd-width">
+	<div class="ydb-logo"><img src="ad/adb_02.jpg"></div>
+	<div class="ydb-headrig">
+		<div class="toplink">
+			<ul>
+				<li class="first">[<a href="#" class="login">登陆</a> <a href="#">会员注册</a>]</li>
+				<li><a href="#">易都天下</a></li>	
+				<li><a href="#">我要买</a></li>
+				<li><a href="#">商家注册</a></li> 
+				<li><a href="#">我的易都</a></li> 
+				<li><a href="#">我的订单</a></li> 
+				<li class="gwc"><a href="#">购物车(0)</a></li>  
+				<li><a href="#">收藏夹</a></li> 
+				<li><a href="#">帮助中心</a></li>  
+				<li class="kf"><a href="#"> 在线客服</a></li>   
+				<li><a href="#">社区</a></li>
+			</ul>
+		</div>
+		
+		<div class="nav">
+			<div class="main">
+				<a href="#"><img src="ad/adb_nav01.jpg" alt="首页"></a>
+				<a href="#"><img src="ad/adb_nav02.jpg" alt="易都资讯"></a>
+				<a href="#"><img src="ad/adb_nav03.jpg" alt="首页"></a>
+				<a href="#"><img src="ad/adb_nav04.jpg" alt="易都资讯"></a>
+				<a href="#"><img src="ad/adb_nav05.jpg" alt="易都资讯"></a>				
+			</div>
+		</div>
+		
+		<div class="serch">
+			<div class="ser" id="ydSerch">
+				<input name="" value="请选择您需要的分类" type="text"><s></s><a href="#" class="serx">搜索</a>
+				<div class="openbox" id="ydSerchBox">
+						<a href="javascript:void(0)" rel="nofollow">商品分类一</a>
+						<a href="javascript:void(0)" rel="nofollow">商品分类二</a>	
+						<a href="javascript:void(0)" rel="nofollow">商品分类三</a>											
+				</div>
+			</div>
+			<script type="text/javascript">
+				$("#ydSerch s").click(function(event){//绑定事件处理
+					 event.stopPropagation();//停止冒泡
+					var offset = $(event.target).offset();//取消事件冒泡
+					$("#ydSerchBox").show();//动画显示
+				});
+				$(document).click(function(event) { $("#ydSerchBox").hide() });//单击空白区域隐藏
+				$("#ydSerchBox a").click(function(event) { $("#ydSerchBox").hide() });//单击弹出层则自身隐藏
+				$('#ydSerchBox a').click(function(){
+					$("#ydSerch").find("input").val($(this).html());
+					$(this).find('#ydSerchBox').hide();
+				});
+			</script>		
+			<div class="tel">热线电话<br>4008200573</div>
+		</div>
+	</div><!--ydb-headrig-->
+</div>
+<!--头部结束-->
+
+<div class="ydg-width">
+	<div class="ydh-list">
+    <div class="tit"><h2><img src="images/ydh-tit01.gif"></h2><b><img src="images/ydh-biao01.gif"></b></div>		
+		<div class="ydh-listmain" id="ydhListMain">
+					<h4><a href="#">虚拟商品</a></h4>
+					<div class="boxs">
+						<div class="link"><a href="#">女装</a><a href="#">男装</a><a href="#">内衣</a><a href="#">每日</a><a href="#">每日</a>  </div>
+							 <div class="bg"></div>
+							 <div class="ydh-listbox">
+							   <div class="listbox">
+									<h5><a href="#">夏季必备</a></h5>
+									<div class="linkbox">
+										<a href="#">女装</a><a href="#">男装</a><a href="#">内衣</a><a href="#">男鞋</a> <a href="#">品质男装</a><a href="#">男鞋</a><a href="#">女鞋新品</a> <a href="#">运动鞋服</a>							
+									</div>
+								</div>
+								<div class="listbox">
+									<h5><a href="#">夏季必备</a></h5>
+									<div class="linkbox">
+										<a href="#">女装</a><a href="#">男装</a><a href="#">内衣</a><a href="#">男鞋</a> <a href="#">品质男装</a><a href="#">男鞋</a><a href="#">女鞋新品</a> <a href="#">运动鞋服</a>							
+									</div>
+								</div>
+								<div class="listbox">
+									<h5><a href="#">夏季必备</a></h5>
+									<div class="linkbox">
+										<a href="#">女装</a><a href="#">男装</a><a href="#">内衣</a><a href="#">男鞋</a> <a href="#">品质男装</a><a href="#">男鞋</a><a href="#">女鞋新品</a> <a href="#">运动鞋服</a>							
+									</div>
+								</div>
+							</div>
+					</div>
+					<h4><a href="#">虚拟商品</a></h4>
+					<div class="boxs">
+						<div class="link"><a href="#">女装</a><a href="#">男装</a><a href="#">内衣</a><a href="#">每每日</a> </div>
+						<div class="bg"></div>
+						<div class="ydh-listbox">11</div>	
+					</div>
+					<h4><a href="#">虚拟商品</a></h4>
+					<div class="boxs">
+						<div class="link"><a href="#">女装</a><a href="#">男装</a><a href="#">内衣</a><a href="#">品质男装</a> </div>
+						<div class="bg"></div>
+						<div class="ydh-listbox">22</div>
+					</div>
+					<h4><a href="#">虚拟商品</a></h4>
+					<div class="boxs">
+						<div class="link"><a href="#">女装</a><a href="#">品质男装</a><a href="#">内衣</a><a href="#">每日</a> </div>
+						<div class="bg"></div>
+						<div class="ydh-listbox">33</div>
+					</div>
+					<h4><a href="#">虚拟商品</a></h4>
+					<div class="boxs">
+						<div class="link"><a href="#">女装</a><a href="#">男装</a><a href="#">内衣</a><a href="#">每日</a> </div>
+						<div class="bg"></div>
+						<div class="ydh-listbox">44</div>
+					</div>
+					<h4><a href="#">虚拟商品</a></h4>
+					<div class="boxs">
+						<div class="link"><a href="#">女装</a><a href="#">男装</a><a href="#">女鞋新品</a><a href="#">每日</a> </div>
+						<div class="bg"></div>
+						<div class="ydh-listbox">55</div>
+					</div>
+					<h4><a href="#">虚拟商品</a></h4>
+					<div class="boxs">
+						<div class="link"><a href="#">女装</a><a href="#">男装</a><a href="#">内衣</a><a href="#">每日</a> </div>
+						<div class="bg"></div>
+						<div class="ydh-listbox">66</div>
+					</div>
+					<h4><a href="#">虚拟商品</a></h4>
+					<div class="boxs">
+						<div class="link"><a href="#">女装</a><a href="#">男装</a><a href="#">内衣</a><a href="#">每日</a> </div>
+						<div class="bg"></div>
+						<div class="ydh-listbox">77</div>
+					</div>
+					<h4><a href="#">虚拟商品</a></h4>
+					<div class="boxs">
+						<div class="link link01"><a href="#">女装</a><a href="#">男装</a><a href="#">内衣</a><a href="#">每日</a> </div>
+						<div class="bg"></div>
+						<div class="ydh-listbox">88</div>
+					</div>																						
+		</div>
+	</div>		
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var objStr = "#ydhListMain div.boxs";
+			$(objStr).each(function(i){
+				$(this).mouseover(function(){
+					$($("div.ydh-listbox")[i]).show();
+					$($(objStr)[i]).addClass("cur");
+					var heightx=$('#ydhListMain > div.cur').height();		
+				});
+				$(this).hover(function(){},function(){
+					$($("div.ydh-listbox")[i]).hide();
+					$($(objStr)[i]).removeClass("cur");
+				});	
+			});
+		});
+	</script>
+	<div class="ydh-toprignt">
+		<div class="ydh-tpleft">
+			<div class="ydh-bigad"><img src="ad/ydh_01.jpg" /></div>			
+			<div class="ydh-tplbotad yd-ad" id="ybcSwly">
+				<div class="box box01"><img src="ad/ydh_02.jpg"/></div>
+				<div class="box"><img src="ad/ydh_02.jpg"/></div>
+				<div class="box"><img src="ad/ydh_02.jpg"/></div>
+				<div class="box"><img src="ad/ydh_02.jpg"/></div>
+				<div class="box"><img src="ad/ydh_02.jpg"/></div>
+				<div class="box"><img src="ad/ydh_02.jpg"/></div>
+				<div class="box"><img src="ad/ydh_02.jpg"/></div>
+				<div class="box"><img src="ad/ydh_02.jpg"/></div>
+				<div class="tit">
+					<li class="cur">凉鞋</li>
+					<li>雪纺裙</li>
+					<li>包包</li>
+					<li>配饰</li>
+					<li>图书精选</li>
+					<li>凉鞋</li>
+					<li>雪纺裙</li>
+					<li>图书精选</li>
+				</div>		
+			<script type="text/javascript">
+			$('#ybcSwly div.box').soChange({thumbObj:'#ybcSwly div.tit li',thumbNowClass:'cur',slideTime:0,autoChange:false, delayTime:100});
+			</script>							
+			</div>
+		</div>
+		<div class="ydh-tprig">
+			<div class="ydh-hdst" id="ydgHdst">
+				<ul>
+					<li class="li cur">·<a href="#">热卖80后童年回忆</a></li> 
+					<li class="box first"><a href="#"><img src="ad/ydg_04.jpg"/ ></a></li> 
+					<li class="li">·<a href="#">时尚宝宝秀满一百减二十</a></li> 
+					<li class="box"><a href="#"><img src="ad/ydg_04.jpg"/></a></li> 
+					<li class="li">·<a href="#">新款夏装5折回馈中</a></li> 
+					<li class="box"><a href="#"><img src="ad/ydg_04.jpg"/></a></li> 
+					<li class="li">·<a href="#">防晒美帽5折包邮</a></li> 
+					<li class="box"><a href="#"><img src="ad/ydg_04.jpg"/></a></li> 
+				</ul>
+			</div>		
+			<script type="text/javascript">
+			$('#ydgHdst li.box').soChange({thumbObj:'#ydgHdst li.li',thumbNowClass:'cur',	slideTime:0, autoChange:false, delayTime:0});
+			</script>		
+			<div class="ydh-ad"><img src="ad/ydg_02.jpg"/></div>								
+		</div>	
+	</div>
+	<div class="clear"></div>	
+</div>
+
+<!--通栏广告1-->
+<div class="yd-pdwid yd-ad "><a href="#"><img src="ad/ydg_05.jpg"/></a></div>
+<!--热销品牌-->
+<div class="yd-pdwid">
+   <div class="ydh-rspptit"><a href="#">热销品牌</a></div>
+   <!--热销品牌左边广告切换-->
+   <div class="ydh-mrtjle">
+		<div class="tit"><ul><li class="cur"></li><li></li></ul> </div> 
+        <div class="mrtj-box">
+	 	  <p class="first"> <a href="#"><img src="ad/ydh_03.jpg"/></a></p>
+		  <p><a href="#"><img src="ad/ydh_03.jpg"/></a></p>
+        </div>
+   </div>    
+   <script type="text/javascript">$('.ydh-mrtjle div.mrtj-box p').soChange({thumbObj:'.ydh-mrtjle div.tit li',thumbNowClass:'cur',	slideTime:500,changeTime:5000,delayTime:0});</script>   
+   <!--热销品牌右侧商品切换--> 
+  <div class="ydh-mrtjrig">
+			<a href="javascript:void(0)" class="sorleft" id="aebiz_left01"></a>
+			<div class="main" id="aebiz_center01">
+					 <div class="ydh-xiso">
+						<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+						<p class="name"><a href="#">散装茉莉清茶</a></p>	
+						<p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+						<b>￥66.00</b>									
+					  </div>
+					  <div class="ydh-xiso">
+						<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+						<p class="name"><a href="#">散装茉莉清茶</a></p>	
+						<p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+						<b>￥66.00</b>									
+					  </div>
+					  <div class="ydh-xiso">
+						<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+						<p class="name"><a href="#">散装茉莉清茶</a></p>	
+						<p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+						<b>￥66.00</b>									
+					  </div>
+					  <div class="ydh-xiso">
+						<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+						<p class="name"><a href="#">散装茉莉清茶</a></p>	
+						<p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+						<b>￥66.00</b>									
+					  </div>
+					  <div class="ydh-xiso">
+						<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+						<p class="name"><a href="#">散装茉莉清茶</a></p>	
+						<p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+						<b>￥66.00</b>									
+					  </div>
+					  <div class="ydh-xiso">
+						<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+						<p class="name"><a href="#">散装茉莉清茶</a></p>	
+						<p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+						<b>￥66.00</b>									
+					  </div>
+					  <div class="ydh-xiso">
+						<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+						<p class="name"><a href="#">散装茉莉清茶</a></p>	
+						<p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+						<b>￥66.00</b>									
+					  </div>
+			</div>
+			<a href="javascript:void(0)" class="sorrig" id="aebiz_right01"></a>
+		<script type="text/javascript" language="javascript">
+			var aebiz = new ScrollPic();
+			aebiz.scrollContId = "aebiz_center01"; //内容容器ID
+			aebiz.arrLeftId = "aebiz_left01";//左箭头ID
+			aebiz.arrRightId = "aebiz_right01"; //右箭头ID
+			aebiz.listEvent = "onmouseover"; //切换事件
+			aebiz.frameWidth = 720;//显示框宽度
+			aebiz.pageWidth = 120; //翻页宽度
+			aebiz.speed = 30; //移动速度(单位毫秒，越小越快)
+			aebiz.space = 10; //每次移动像素(单位px，越大越快)
+			aebiz.autoPlay = true; //自动播放
+			aebiz.upright = false; //垂直滚动
+			aebiz.autoPlayTime = 4; //自动播放间隔时间(秒)
+			aebiz.initialize(); //初始化
+		</script> 
+  </div>
+</div>
+<!--热销品牌结束-->
+<!--每日特价-->
+<div class="yd-pdwid" >
+    <div class="ydh-mrtjtit"><a href="#">每日特价</a></div>
+	<div class="ydh-mrtj">
+	       <div class="ydh-mrtjne">
+		      <p class="time">还剩<span>7</span>小时<span>37</span>分<span>7</span>秒</p>
+			  <strong><a href="#"><img src="ad/ydg_07.jpg" align="absmiddle"></a></strong>
+			  <p class="name"><a href="#">散装茉莉清茶</a></p>	
+			  <p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+			  <b>￥66.00</b>									
+	       </div>
+		  <div class="ydh-mrtjne">
+		      <p class="time">还剩<span>7</span>小时<span>37</span>分<span>7</span>秒</p>
+			  <strong><a href="#"><img src="ad/ydg_07.jpg" align="absmiddle"></a></strong>
+			  <p class="name"><a href="#">散装茉莉清茶</a></p>	
+			  <p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+			  <b>￥66.00</b>									
+	       </div>
+	  	  <div class="ydh-mrtjne">
+		      <p class="time">还剩<span>7</span>小时<span>37</span>分<span>7</span>秒</p>
+			  <strong><a href="#"><img src="ad/ydg_07.jpg" align="absmiddle"></a></strong>
+			  <p class="name"><a href="#">散装茉莉清茶</a></p>	
+			  <p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+			  <b>￥66.00</b>									
+	       </div>							
+	      <div class="ydh-mrtjne">
+		      <p class="time">还剩<span>7</span>小时<span>37</span>分<span>7</span>秒</p>
+			  <strong><a href="#"><img src="ad/ydg_07.jpg" align="absmiddle"></a></strong>
+			  <p class="name"><a href="#">散装茉莉清茶</a></p>	
+			  <p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+			  <b>￥66.00</b>									
+	       </div>
+		  <div class="ydh-mrtjne">
+		      <p class="time">还剩<span>7</span>小时<span>37</span>分<span>7</span>秒</p>
+			  <strong><a href="#"><img src="ad/ydg_07.jpg" align="absmiddle"></a></strong>
+			  <p class="name"><a href="#">散装茉莉清茶</a></p>	
+			  <p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+			  <b>￥66.00</b>									
+	       </div>
+	</div>
+</div>
+<!--每日特价结束-->
+<!--名品折扣-->
+<div class="yd-pdwid" >
+    <div class="ydh-mpzktit"><a href="#">名品折扣</a></div>    
+	<div class="ydh-mpzkleft">
+	    <div class="main">
+		    <p class="first"><a href="#"><img src="ad/ydh_04.jpg"/></a></p>
+			<p><a href="#"><img src="ad/ydh_04.jpg"/></a></p>
+			<p><a href="#"><img src="ad/ydh_04.jpg"/></a></p>
+		</div>
+		<div class="tit">
+		    <ul>
+			   <li class="cur">1</li>
+			   <li>2</li>
+			   <li>3</li>
+			</ul>
+	    </div>
+	</div>
+	 <script type="text/javascript">$('.ydh-mpzkleft div.main p').soChange({thumbObj:'.ydh-mpzkleft div.tit li',thumbNowClass:'cur',	slideTime:500,changeTime:5000,delayTime:0});</script>
+	<div class="ydh-mpzkright">
+	    <div class="mainleft"><a href="#"><img src="ad/ydh_05.jpg"/></a></div>
+		<div class="mainright">
+           <div class="mainright01">
+			  <strong><a href="#"><img src="ad/ydg_07.jpg" align="absmiddle"></a></strong>
+			  <p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+			  <b>￥66.00</b><s>￥185</s>									
+	       </div>							
+	      <div class="mainright01">
+			  <strong><a href="#"><img src="ad/ydg_07.jpg" align="absmiddle"></a></strong>
+			  <p class="scj">散装茉莉清茶散-装茉莉清茶</p>					
+			  <b>￥66.00</b> &nbsp;&nbsp;<s>￥185</s>									
+	       </div>
+		</div>
+	</div>
+	 <div class="ydg-sptb">
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+	   <a href="#"><img src="ad/ydg_10.jpg"></a>
+   </div>
+</div>
+<!--名品折扣结束-->
+<!--通栏广告2-->
+<div class="yd-pdwid yd-ad "><a href="#"><img src="ad/ydg_05.jpg"/></a></div>
+<!--服装  鞋包-->
+<div class="yd-pdwid" >
+   <div class="yd-fzxb" >
+        <div class="ydh-fzxbtit ydh-fztit"><a href="#">服装</a></div>
+          <div class="ydh-gg"> <a href="#"><img src="ad/ydh_06.jpg"></a></div>
+		    <div class="main">
+			<div class="ydh-gg"> <a href="#"><img src="ad/ydh_07.jpg"></a></div>
+   			  <div class="ydh-mpzk02 ydh-line">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单面柔笠</a></p>	
+				<p class="scj">散装清茶散-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+			 <div class="ydh-mpzk02">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单柔床笠</a></p>	
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+		 </div>
+			<div class="ydh-pp">
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+		   </div>
+   </div>
+   <div class="yd-fzxb ydh-margin" >
+        <div class="ydh-fzxbtit ydh-xbtit"><a href="#">箱包</a></div>
+          <div class="ydh-gg"> <a href="#"><img src="ad/ydh_06.jpg"></a></div>   
+		    <div class="main">
+			<div class="ydh-gg"> <a href="#"><img src="ad/ydh_07.jpg"></a></div>
+   			  <div class="ydh-mpzk02 ydh-line">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单面柔笠</a></p>	
+				<p class="scj">散装清茶散-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+			 <div class="ydh-mpzk02">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单柔床笠</a></p>	
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+		 </div>
+		 <div class="ydh-pp ydh-border">
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+		   </div>
+   </div>
+</div>
+<!--母婴  家纺-->
+<div class="yd-pdwid" >
+   <div class="yd-fzxb" >
+        <div class="ydh-fzxbtit ydh-mytit"><a href="#">母婴</a></div>
+		    <div class="main01">
+			  <div class="ydh-gg"> <a href="#"><img src="ad/ydh_07.jpg"></a></div>
+						<div class="ydh-mpzk02 ydh-line">
+					<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+					<p class="name"><a href="#">单面柔笠</a></p>	
+					<p class="scj">散装清茶散-装茉莉清茶</p>					
+					<b>￥66.00</b>									
+				 </div>
+					 <div class="ydh-mpzk02">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单柔床笠</a></p>	
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+				</div>
+		 <div class="ydh-gg"> <a href="#"><img src="ad/ydh_06.jpg"></a></div>
+		 <div class="ydh-pp  ydh-border">
+		        <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   
+		   </div>
+   </div>
+   <div class="yd-fzxb ydh-margin" >
+        <div class="ydh-fzxbtit ydh-jftit"><a href="#">家纺</a></div>
+		    <div class="main01">
+			<div class="ydh-gg"> <a href="#"><img src="ad/ydh_07.jpg"></a></div>
+   			  <div class="ydh-mpzk02 ydh-line">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单面柔笠</a></p>	
+				<p class="scj">散装清茶散-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+			 <div class="ydh-mpzk02">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单柔床笠</a></p>	
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+		 </div>
+		 <div class="ydh-gg"> <a href="#"><img src="ad/ydh_06.jpg"></a></div>
+		 <div class="ydh-pp">
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+		   </div>
+   </div>
+</div>
+<!--通栏广告3-->
+<div class="yd-pdwid yd-ad "><a href="#"><img src="ad/ydg_05.jpg"/></a></div>
+<div class="yd-pdwid" >
+   <div class="yd-fzxb" >
+        <div class="ydh-fzxbtit ydh-jutit"><a href="#">家居</a></div>
+          <div class="ydh-gg"> <a href="#"><img src="ad/ydh_06.jpg"></a></div>
+		    <div class="main">
+			<div class="ydh-gg"> <a href="#"><img src="ad/ydh_07.jpg"></a></div>
+   			  <div class="ydh-mpzk02 ydh-line">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单面柔笠</a></p>	
+				<p class="scj">散装清茶散-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+			 <div class="ydh-mpzk02">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单柔床笠</a></p>	
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+		 </div>
+			<div class="ydh-pp">
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+		   </div>
+   </div>
+   <div class="yd-fzxb ydh-margin" >
+        <div class="ydh-fzxbtit ydh-hzptit"><a href="#">化妆品</a></div>
+          <div class="ydh-gg"> <a href="#"><img src="ad/ydh_06.jpg"></a></div>   
+		    <div class="main">
+			<div class="ydh-gg"> <a href="#"><img src="ad/ydh_07.jpg"></a></div>
+   			  <div class="ydh-mpzk02 ydh-line">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单面柔笠</a></p>	
+				<p class="scj">散装清茶散-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+			 <div class="ydh-mpzk02">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单柔床笠</a></p>	
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+		 </div>
+		 <div class="ydh-pp ydh-border">
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+		   </div>
+   </div>
+</div>
+<!--母婴  家纺-->
+<div class="yd-pdwid" >
+   <div class="yd-fzxb" >
+        <div class="ydh-fzxbtit ydh-smtit"><a href="#">数码</a></div>
+		    <div class="main01">
+			  <div class="ydh-gg"> <a href="#"><img src="ad/ydh_07.jpg"></a></div>
+   			  <div class="ydh-mpzk02 ydh-line">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单面柔笠</a></p>	
+				<p class="scj">散装清茶散-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+			 <div class="ydh-mpzk02">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单柔床笠</a></p>	
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+		 </div>
+		 <div class="ydh-gg"> <a href="#"><img src="ad/ydh_06.jpg"></a></div>
+		 <div class="ydh-pp  ydh-border">
+		        <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   <a href="#"><img src="ad/ydh_09.jpg"></a>
+			   
+		   </div>
+   </div>
+   <div class="yd-fzxb ydh-margin" >
+        <div class="ydh-fzxbtit ydh-hwydtit"><a href="#">户外运动</a></div>
+		    <div class="main01">
+			<div class="ydh-gg"> <a href="#"><img src="ad/ydh_07.jpg"></a></div>
+   			  <div class="ydh-mpzk02 ydh-line">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单面柔笠</a></p>	
+				<p class="scj">散装清茶散-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+			 <div class="ydh-mpzk02">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="name"><a href="#">单柔床笠</a></p>	
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+		 </div>
+		 <div class="ydh-gg"> <a href="#"><img src="ad/ydh_06.jpg"></a></div>
+		 <div class="ydh-pp">
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+			   <a href="#"><img src="ad/ydh_08.jpg"></a>
+		   </div>
+   </div>
+</div>
+<!--通栏广告4-->
+<div class="yd-pdwid yd-ad "><a href="#"><img src="ad/ydg_05.jpg"/></a></div>
+<!--推荐商品-->
+<div class="yd-pdwid" >
+   <div class="ydh-rspptit"><a href="#">推荐商品</a></div>
+   <div class="ydh-tjsple">
+			 <div class="tittle">
+					<li>机票</li>
+					<li class="cur">酒店</li>
+					<li>旅游</li>
+					<li>机票</li>
+					<li>机票</li>
+					<li>酒店</li>
+					<li>旅游</li>
+					<li>酒店</li>
+					<li>旅游</li>
+			 </div>
+	        <div class="main main01">
+			  <div class="ydh-mpzk03 ydh-line">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			  </div>
+			   <div class="ydh-mpzk03 ydh-line">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+			  <div class="ydh-mpzk03 ydh-line">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+			  <div class="ydh-mpzk03">
+				<strong><a href="#"><img src="ad/ydg_06.jpg" align="absmiddle"></a></strong>	
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<b>￥66.00</b>									
+			 </div>
+			</div>
+			<div class="main">222</div>
+			<div class="main">333</div>
+			<div class="main">444</div>
+			<div class="main">555</div>
+			<div class="main">666</div>
+			<div class="main">777</div>
+			<div class="main">888</div>
+			<div class="main">999</div>
+	      <script type="text/javascript">
+			$('.ydh-tjsple div.main').soChange({thumbObj:'.ydh-tjsple div.tittle li',thumbNowClass:'cur',slideTime:0,autoChange:false, delayTime:100});
+			</script>	
+	      </div>
+   <div class="ydh-tjspri">
+        <div class="main main01 main02">
+		   <strong><a href="#"><img src="ad/ydh_10.jpg" align="absmiddle"></a></strong>	
+		   <p class="scj">散装茉莉-装茉莉清茶</p>					
+		   <b>￥66.00</b>	
+		</div>
+		<div class="main main01"><a href="#">22</a></div>
+		<div class="main main01"><a href="#">33</a></div>
+		<div class="main main01"><a href="#">44</div>
+		<div class="main main01"><a href="#">55</div>
+		<div class="main main01"><a href="#">66</div>
+        <div class="tittle">
+			<li><img src="ad/ydh_11.jpg" align="absmiddle"></li>
+			<li class="cur"><img src="ad/ydh_11.jpg" align="absmiddle"></li>
+			<li><img src="ad/ydh_11.jpg" align="absmiddle"></li>
+			<li><img src="ad/ydh_11.jpg" align="absmiddle"></li>
+			<li><img src="ad/ydh_11.jpg" align="absmiddle"></li>
+			<li><img src="ad/ydh_11.jpg" align="absmiddle"></li>
+		</div>
+<script type="text/javascript">$('.ydh-tjspri div.main').soChange({thumbObj:'.ydh-tjspri div.tittle li',thumbNowClass:'cur',slideTime:0,autoChange:false, delayTime:100});</script>	
+    <div class="ydh-gg01"> <a href="#"><img src="ad/ydh_12.jpg"></a></div>
+   </div> 
+</div>
+<!--推荐商品结束-->
+<div class="yd-pdwid ydh-foot">
+   <div class="tit">
+     <img src="images/ydh-tit03.gif"/>
+      <ul><li class="cur"></li><li></li><li></li><li></li></ul> 
+   </div>
+   <div class="mrtj-box">
+	 	  <span class="first">
+		    <div class="ydh-mpzk04">
+				<strong><a href="#"><img src="ad/ydh_13.jpg" align="absmiddle"></a></strong>
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<s>￥795</s><b>￥66.00</b>									
+			 </div>
+			 <div class="ydh-mpzk04">
+				<strong><a href="#"><img src="ad/ydh_13.jpg" align="absmiddle"></a></strong>
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<s>￥795</s><b>￥66.00</b>									
+			 </div>
+			 <div class="ydh-mpzk04">
+				<strong><a href="#"><img src="ad/ydh_13.jpg" align="absmiddle"></a></strong>
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<s>￥795</s><b>￥66.00</b>								
+			 </div>
+			 <div class="ydh-mpzk04">
+				<strong><a href="#"><img src="ad/ydh_13.jpg" align="absmiddle"></a></strong>
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<s>￥795</s><b>￥66.00</b>								
+			 </div>
+			 <div class="ydh-mpzk04">
+				<strong><a href="#"><img src="ad/ydh_13.jpg" align="absmiddle"></a></strong>
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<s>￥795</s><b>￥66.00</b>									
+			 </div>
+			 <div class="ydh-mpzk04">
+				<strong><a href="#"><img src="ad/ydh_13.jpg" align="absmiddle"></a></strong>
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<s>￥795</s><b>￥66.00</b>								
+			 </div>
+			 <div class="ydh-mpzk04">
+				<strong><a href="#"><img src="ad/ydh_13.jpg" align="absmiddle"></a></strong>
+				<p class="scj">散装茉莉-装茉莉清茶</p>					
+				<s>￥795</s><b>￥66.00</b>							
+			 </div>
+		</span>
+		<span>222</span>
+		<span>3333333</span>
+		<span>4444444444</span>
+   </div>   
+   <script type="text/javascript">$('.ydh-foot div.mrtj-box span').soChange({thumbObj:'.ydh-foot div.tit li',thumbNowClass:'cur',slideTime:0,autoChange:false, delayTime:100});</script>
+</div>
+<!--尾部-->
+<div class="yd-pdwid yda-bot">
+	<s></s>
+		<div class="yda-botmain">
+				<div class="box box01">
+					<h4><a href="#">查找商品</a></h4>
+					<p><a href="#">如果找商品</a></p>
+					<p><a href="#">如果购买商品</a></p>					
+				</div>
+				<div class="box box02">
+					<h4><a href="#">查找商品</a></h4>
+					<p><a href="#">如果找商品</a></p>
+					<p><a href="#">如果购买商品</a></p>					
+				</div>
+				<div class="box box03">
+					<h4><a href="#">查找商品</a></h4>
+					<p><a href="#">如果找商品</a></p>
+					<p><a href="#">如果购买商品</a></p>					
+				</div>	
+				<div class="box box04">
+					<h4><a href="#">查找商品</a></h4>
+					<p><a href="#">如果找商品</a></p>
+					<p><a href="#">如果购买商品</a></p>					
+				</div>	
+				<div class="box box05">
+					<h4><a href="#">查找商品</a></h4>
+					<p><a href="#">如果找商品</a></p>
+					<p><a href="#">如果购买商品</a></p>					
+				</div>															
+		</div>
+	<s></s>
+</div>
+<div class="yda-botlink">
+	<div class="yd-width">
+		<div class="link">
+			<a href="#">合作伙伴</a>|
+			<a href="#">帮助中心</a>|
+			<a href="#">联系我们</a>|
+			<a href="#">网站地图</a>|
+			<a href="#">商家入驻</a>|
+			<a href="#">供应商加盟</a>|
+			<a href="#">加盟易都</a>|
+			<a href="#">导购</a>|
+			<a href="#">网站联盟</a>|
+			<a href="#">官方博客</a>|
+			<a href="#">广告联系</a>
+		</div>
+		<div class="info">
+			建设运营：易都天下科技发展有限公司  版权所有：Copyright 2003-2011,www.ifreecity.com<br/>
+			客服热线：400-000-000  客服邮箱：yidu_ifreecity.com<br/>
+			经营许可证编号 京ICP证000000号<br/>
+			<img src="ad/ad_20.jpg"/>		
+		</div>
+		<div class="aebiz-jsjc">技术支持：<a href="http://www.aebiz.net" target="_blank">全网数商</a></div>
+	</div>
+</div>
+<!--尾部结束-->
+</body>
+</html>
+</body>
+</html>

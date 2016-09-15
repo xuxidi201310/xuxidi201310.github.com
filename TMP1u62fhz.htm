@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" title="对于&quot;在浏览器中预览&quot;为禁用: css/base.css"/>
+<style type="text/css">
+
+
+
+</style>
+<style>
+
+	/*header*/
+     body{ background:#f1f1f1;}
+	.header{width:100%; height:60px;  background:#000;color:#666;}
+	.header ul{overflow:hidden;}
+	.header ul li{ float:left; width:100px;height:60px; text-align:center; line-height:60px;margin:0 20px;   }
+	.header ul li a{font-size:20px; color:#CCC; font-weight:bold;}
+	.header ul li a:hover{  color:#F00;}
+	/*banner*/
+	.banner{ width:100%; height:650px;text-align:center;margin:0 auto; position:relative;overflow:hidden; }
+	.banner .banner_img{width:100%; overflow:hidden; }
+	
+ 	.banner .banner_img li{width:1345px; height:650px; float:left; position:relative; text-align:center; display:none;} 
+	.banner .ad_img{width:506px;height:440px; position:absolute; top:50%; margin-top:-220px;right:100px;}
+	.banner .btn{overflow:hidden; position:absolute;bottom:50px; left:50%;margin-left:-260px;}
+	.banner .btn span{ float:left;margin:0 20px; display:block;width:25px; height:25px; background:#999;line-height:25px; text-align:center;color:#fff;}
+	.banner .btn .cur{background:#900;}
+	
+	.icon{width:100%; height:100px; margin:20px auto;margin-bottom:20px; background:#previous; position:relative;}
+	.icon ul{ overflow:hidden;width:1345px; text-align:center; }
+	.icon li{ float:left;margin:0 30px;width:15%;margin-top:20px;}
+	.icon li p{ padding-top:8px; color:#306}
+	.icon li img:hover{-webkit-transform:scale(2,2);}
+	/*con*/
+	.con1{width:100%; margin:auto;}
+	.con1 ul{overflow:hidden;width:1143px;margin:0 auto; }
+	.con1 ul li{width:361px;height:237px; margin:10px 10px; float:left; position:relative;}
+	.con1 ul li a{width:361px; height:237px; display:block; position:relative;}
+	.con1 ul li .beg-color{width:100%; height:0px; position:absolute; bottom:0;left:0; background:rgba(0,255,255,0.5);filter:alpha(opacity:50); text-align:center;line-height:30px; font-size:30px;color:#000; overflow:hidden;line-height:237px;}	
+	
+	.line,line2{width:100%;margin-top:30px; height:50px; text-align:center; line-height:50px;font-size:60px; font-weight:bold;color:#9C9;font-style:italic;padding-bottom:20px; text-shadow:2px 2px 5px #000;}
+	.line2{width:300px;border-top:2px solid #000; font-size:46px;color:#9C9; font-weight:bold;text-shadow:2px 2px 5px #000; text-align:center;font-style:italic;}
+	/*con2*/
+	
+	.con2 {overflow:hidden;position:relative;margin:20px auto;height:200px;}
+	.con2 ul{ position:absolute; left:0; top:0;height:200px;}
+	.con2 li{width:133px;height:200px; padding:0 10px; float:left; }
+	
+ 	.con2 li img{width:133px;height:200px;}
+	/*footer*/
+	.footer{ min-width:1345px;height:100px; background:#414a5b;}	
+	.footer ul{ width:100%; height:100px;overflow:hidden;padding-left:50px;}
+	.footer ul li{width:25%; float:left;height:100px; line-height:100px;color:#CCC;font-size:20px; text-align:center }
+	.footer ul li i{width:60px; height:62px;display:inline-block;margin-top:20px; -webkit-transform:perspective(800px) rotateZ(0deg); -webkit-transform-style:preserve-3d;}
+	.footer ul .one{ background:url(img/img2/phone.png) no-repeat; }
+	.footer ul .two{ background:url(img/img2/weixin.png)  no-repeat}
+	.footer ul .three{ background:url(img/img2/email.png) no-repeat}
+	.footer ul .four{ background:url(img/img2/address.png) no-repeat}
+	.footer ul li i:hover{ -webkit-transform:perspective(800px) rotateZ(360deg);-webkit-transition:0.5s all ease;}
+
+</style>
+<script src="js/through.js"></script>
+<script src="js/addEvent.js"></script>
+<script src="js/move.js"></script>
+
+<script>
+	window.onload=function(){
+		//选项卡
+		;(function(){
+			var oBox=document.getElementById('banner');
+			var oBan=document.getElementById('banner_img');	
+			var aLi=oBan.children;
+			
+			var oBtn=document.getElementById('btn');
+			var aSpan=oBtn.children;
+			var iNow=0;
+			var timer=null;	
+			var aDiv=oBan.getElementsByTagName('div');
+				
+			for(var i=0;i<aSpan.length;i++){
+				(function(index){
+					addEvent(aSpan[i],'click',function(){
+						iNow=index;
+						tab();
+
+					});
+						
+				})(i);	
+			}
+			function tab(){
+				for(var i=0;i<aSpan.length;i++){
+						aSpan[i].className='';
+						aLi[i].style.display='none';				
+				}
+				aSpan[iNow].className='cur';
+				aLi[iNow].style.display='block';	
+			};		
+			timer=setInterval(function(){
+					iNow++;
+					if(iNow==aSpan.length){
+						iNow=0;	
+					}
+					tab();		
+			},2000);
+			oBox.onmouseover=function(){
+				clearInterval(timer);	
+			};
+			oBox.onmouseout=function(){
+				clearInterval(timer);
+				timer=setInterval(function(){
+					iNow++;
+					if(iNow==aSpan.length){
+						iNow=0;	
+					}
+					tab();		
+				},2000);	
+			};
+			
+		})();
+		
+		
+		
+		//con1
+		;(function(){
+			var oCon1=document.getElementById('con1');
+			var aA=oCon1.getElementsByTagName('a');
+			var aDeg_color=oCon1.getElementsByTagName('div');
+			for(var i=0;i<aA.length;i++){
+				aA[i].index=i;
+				aA[i].onmouseover=function(){
+				 move(aDeg_color[this.index],{height:237});
+				};
+				aA[i].onmouseout=function(){
+				 move(aDeg_color[this.index],{height:0});
+				};	
+			}
+		})();
+		//无缝滚动
+		;(function(){
+			var oCon2=document.getElementById('con2');
+			var oUl=document.getElementById('con2_list');
+			var aLi=oUl.children;
+			var timer;
+			oUl.innerHTML += oUl.innerHTML;
+			oUl.style.width = aLi[0].offsetWidth *aLi.length+'px';
+			var W = oUl.offsetWidth/2;
+			var l = 0;
+			timer=setInterval(function(){
+				l +=2;
+				if(l>0){
+					l = -W;
+				}
+				oUl.style.left = l + 'px';
+				
+			},30);
+			oCon2.onmouseover=function(){	
+				clearInterval(timer);	
+			}
+			oCon2.onmouseout=function(){
+					
+				timer=setInterval(function(){
+					l +=2;
+					if(l>0){
+						l = -W;
+					}
+					oUl.style.left = l + 'px';
+					
+				},30);	
+			}
+		})();
+	};
+</script>
+</head>
+<body >
+<div class="header">
+    <ul>
+       <li class="home"><a href="3Dbox.html">3D盒子</a></li>
+       <li class="home"><a href="fanshu.html">翻书效果</a></li>
+       <li class="home"><a href="baozha.html">图片爆炸</a></li>
+       <li class="home"><a href="clock.html">小时钟</a></li>
+       <li class="home"><a href="3Dtu.html">3D图片环</a></li>           
+    </ul>
+</div>
+<!-- banner-->
+<div  class="banner" id="banner">
+	<ul id="banner_img" class="banner_img">
+            	
+            	<li style="background:url(img/imgs/banner_bg1.jpg) no-repeat top center ; display:block;">
+                    <div class="ad_img">
+                        <img src="img/imgs/1.png" width="506" height="440" />					
+                    </div>
+				</li>
+                <li style="background:url(img/imgs/banner_bg2.jpg) no-repeat">	
+                    <div class="ad_img">
+                        <img src="img/imgs/2.png" width="506" height="440" />					
+                    </div>
+				</li>
+                <li style="background:url(img/imgs/banner_bg3.jpg) no-repeat">	
+                    <div class="ad_img">
+                        <img src="img/imgs/3.png" width="506" height="440"  />					
+                    </div>
+				</li>
+                <li style="background:url(img/imgs/banner_bg4.jpg) no-repeat">	
+                    <div class="ad_img">
+                        <img src="img/imgs/4.png" width="506" height="440" />					
+                    </div>
+				</li>
+                <li style="background:url(img/imgs/banner_bg5.jpg) no-repeat">	
+                    <div class="ad_img">
+                        <img src="img/imgs/5.png" width="506" height="440" />					
+                    </div>
+				</li>
+                 <li style="background:url(img/imgs/banner_bg6.jpg) no-repeat">	
+                    <div class="ad_img">
+                        <img src="img/imgs/2.png" width="506" height="440" />					
+                    </div>
+				</li>
+                 <li style="background:url(img/imgs/banner_bg7.jpg) no-repeat">	
+                    <div class="ad_img">
+                        <img src="img/imgs/5.png" width="506" height="440" />					
+                    </div>
+				</li>
+                 <li style="background:url(img/imgs/banner_bg8.jpg) no-repeat">	
+                    <div class="ad_img">
+                        <img src="img/imgs/6.png" width="506" height="440" />					
+                    </div>
+				</li>								
+ 		 </ul>
+         <div class="btn" id="btn">
+         	
+            <span class="cur">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span >8</span>
+         </div>		
+</div>
+<!--icon-->
+<div class="icon w">
+	<ul>
+    	<li><img src="img/imgs/icon1.png"/>
+        	<p>css.ico</p>
+        </li>
+        <li><img src="img/imgs/icon2.png"/>
+        	<p>htm.ico</p>
+        </li>
+        <li><img src="img/imgs/icon3.png"/>
+        	<p>html.ico</p>
+        </li>
+        <li><img src="img/imgs/icon4.png"/>
+        	<p>js.ico</p>
+        </li>
+        <li><img src="img/imgs/icon5.png"/>
+        	<p>php.ico</p>
+        </li>
+    </ul>
+</div>
+<!--con1-->
+<div class="con1 w" id="con1">
+	<ul>
+    	<li>
+        	<a href="yidu/index.html">
+             	<img src="img/imgs/x1.jpg"/>
+                <div class="beg-color" id="beg-color">
+                	<span>html页面</span>
+                </div>
+            </a>     
+        </li>
+        <li>
+        	<a href="3dtu.html">
+             	<img src="img/imgs/x2.jpg"/>
+                 <div class="beg-color" id="beg-color">
+                	<p>css3小效果</p>
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="buyu/demo21.html">
+             	<img src="img/imgs/x3.jpg"/>
+                 <div class="beg-color" id="beg-color">
+                	<p>小游戏</p>
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="canvas-windows6.html">
+             	<img src="img/imgs/x4.jpg"/>
+                 <div class="beg-color" id="beg-color">
+                	<p>window屏保</p>
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="3D.html">
+             	<img src="img/imgs/x5.jpg"/>
+                 <div class="beg-color" id="beg-color">
+                	<p>css滚动效果</p>
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="fanshu.html">
+             	<img src="img/imgs/x6.jpg"/>
+                 <div class="beg-color" id="beg-color">
+                	<p>翻页效果</p>
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="juhuasuan/juhuasuan.html">
+             	<img src="img/imgs/x7.jpg"/>
+                 <div class="beg-color" id="beg-color">
+                	<p>移动端rem布局</p>
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="3Dbox.html">
+             	<img src="img/imgs/x8.jpg"/>
+                 <div class="beg-color" id="beg-color">
+                	<p>3Dbox</p>
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="video.html">
+             	<img src="img/imgs/x9.jpg"/>
+                 <div class="beg-color" id="beg-color">
+                	<p>自定义播放器</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="line w ">My personal station</div>
+<div class="line2 w">My work</div>
+<!--con2-->
+<div class="con2 w" id="con2">
+	<ul id="con2_list">
+    	<li>
+        	<img src="img/imgs/list1.jpg"/>
+        </li>
+        <li>
+        	<img src="img/imgs/list2.jpg"/>
+        </li>
+        <li>
+        	<img src="img/imgs/list3.jpg"/>
+        </li>
+        <li>
+        	<img src="img/imgs/list4.jpg"/>
+        </li>
+        <li>
+        	<img src="img/imgs/list5.jpg"/>
+        </li>
+        <li>
+        	<img src="img/imgs/list6.jpg"/>
+        </li>
+        <li>
+        	<img src="img/imgs/list7.jpg"/>
+        </li>
+        <li>
+        	<img src="img/imgs/list8.jpg"/>
+        </li>
+        <li>
+        	<img src="img/imgs/list1.jpg"/>
+        </li>
+        <li>
+        	<img src="img/imgs/list7.jpg"/>
+
+        </li>
+        <li>
+        	<img src="img/imgs/list8.jpg"/>
+        </li> 
+    </ul>
+	
+</div>
+<div class="footer">
+	<ul>
+    	<li>
+        	<i class="one"></i>
+             手机号：15010830590
+        </li>
+        <li>
+        	<i class="two"></i>
+             微信: xuxi521
+            
+        </li>
+        <li>
+        	<i class="three"></i>
+             邮箱：xidi201310@126.com
+        </li>
+        <li>
+        	<i class="four"></i>
+             地址：北京
+        </li>
+    </ul>
+</div>
+</body>
+</html>

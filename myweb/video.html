@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{margin:0;padding:0;}
+	body{background:url(img/img2/back9.jpg) no-repeat; background-size:100%;}
+	.v_box{text-align:center;margin-top:100px ;}
+	 video{width:600px;}
+	.btn_box{width:600px; height:50px; background:#000; margin:0 auto; overflow:hidden;}
+	.btn{ margin:5px;text-decoration:none;width:40px;height:40px;background:-webkit-radial-gradient(#066,#CCC); border-radius:50%;font-size:16px;  text-align:center; line-height:40px; color:#000; float:left; font-weight:bold;}
+	.vol_box{width:100px; height:16px; margin-top:20px; margin-right:5px; background:#fff;  float:right; position:relative;border-radius:20px;}
+	.vol_box .vol_bar{width:100%;height:100%; background:#009; position:absolute;top:0;left:0; border-radius:20px;}
+	.vol_box .vol_btn{width:22px;height:22px; border-radius:20px; background:-webkit-radial-gradient(#309,#FF3); position:absolute;top:0px;left:0;margin-top:-4px;}
+	.pro_box{float:left;margin-left:5px; width:200px; height:10px; background:#fff; margin-top:20px; position:relative;}
+.pro_bar{ position:absolute; top:0; left:0; height:100%; width:0%; background:aqua;}
+.pro_btn{ position:absolute; left:0; top:0; margin-top:-5px; width:20px; height:20px; border-radius:50%; background:-webkit-radial-gradient(#fff,aqua);}
+.muted{ float:right; margin-top:20px;}
+.time_box{ font-size:20px;width:30px; height:30px; float:left; text-align:center;color:#fff; margin-top:14px;margin-left:5px;}
+</style>
+<script>
+	window.onload = function(){
+	var oV = document.querySelector('video');
+	var oPlay = document.querySelector('.play');
+	var oPause = document.querySelector('.pause');
+	var oStop = document.querySelector('.stop');
+	var oVolbox = document.querySelector('.vol_box');
+	var oVolbar = document.querySelector('.vol_bar');
+	var oVolbtn = document.querySelector('.vol_btn');
+	var oMuted=document.querySelector('.muted');
+	var oProbox=document.querySelector('.pro_box');
+	var oProbtn=document.querySelector('.pro_btn');
+	var oProbar=document.querySelector('.pro_bar');
+	var oTimebox=document.querySelector('.time_box');
+	function toDou(num){
+		return num<10?'0'+num:''+num;
+	}
+	function getTime(s){
+		return toDou(Math.floor(s/60))+':'+toDou(Math.floor(s%60));	
+	} 
+	
+	//暂停 播放 停止
+	oPlay.onclick=function(){
+		oV.play();
+	};
+	oPause.onclick=function(){
+		oV.pause();
+	};
+	oStop.onclick=function(){
+		oV.pause();
+		oV.currentTime=0;
+	};
+	//音量控制
+	oVolbtn.onmousedown=function(ev){
+		var disX = ev.pageX-oVolbtn.offsetLeft;
+		document.onmousemove=function(ev){
+			var l = ev.pageX-disX;
+			if(l<0){
+				l=0;	
+			}else if(l>(oVolbox.offsetWidth-oVolbtn.offsetWidth)){
+				l=oVolbox.offsetWidth-oVolbtn.offsetWidth;
+			}
+			oVolbtn.style.left = l+'px';
+			var scale=l/(oVolbox.offsetWidth-oVolbtn.offsetWidth);
+			oVolbar.style.width=scale*100+'%';
+			oV.volume=scale;
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		};
+		return false;
+	};
+	//静音
+	oMuted.onclick=function(){
+		oV.muted = this.checked;
+	};
+	//视频进度
+	oProbtn.onmousedown=function(ev){
+		var disX=ev.pageX-oProbtn.offsetLeft;
+		document.onmousemove=function(ev){
+			var l=ev.pageX-disX;
+			if(l<0){
+				l=0;	
+			}else if(l>oProbox.offsetWidth-oProbtn.offsetWidth){
+				l=oProbox.offsetWidth-oProbtn.offsetWidth;	
+			}
+			oProbtn.style.left=l+'px';
+			//当前的距离/一共的	
+			var scale=l/(oProbox.offsetWidth-oProbtn.offsetWidth);
+			oProbar.style.width=scale*100+'%';
+			oV.currentTime=scale*oV.duration;
+			
+		};	
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;	
+		};
+		return false;
+	};
+	oV.ontimeupdate=function(){
+		var scale=oV.currentTime/oV.duration;
+		oProbar.style.width=scale*oProbox.offsetWidth+'px';
+		oProbtn.style.left=scale*(oProbox.offsetWidth-oProbtn.offsetWidth)+'px';
+		oTimebox.innerHTML=getTime(oV.currentTime)+'/'+getTime(oV.duration);
+			
+	};
+	
+};
+	
+</script>
+</head>
+
+<body>
+
+<div class="v_box">
+    <video src="http://images.sohu.com/ytv/SH/Coke/64036020120714021103.mp4">
+    </video>
+</div>
+<div class="btn_box">
+	<a href="javascript:;" class="btn play">播放</a>
+    <a href="javascript:;" class="btn pause">暂停</a>
+    <a href="javascript:;" class="btn stop">停止</a>
+   
+    <div class="vol_box">
+   		<div class="vol_bar"></div>
+        <div class="vol_btn"></div> 
+   	</div>
+    <input type="checkbox" class="muted" />
+	<div class="pro_box">
+		<div class="pro_bar"></div>
+		<div class="pro_btn"></div>
+	</div>
+     <div class="time_box">00:00/00:00</div>
+
+</div>
+
+</body>
+</html>
